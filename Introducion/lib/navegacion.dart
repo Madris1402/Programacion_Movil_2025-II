@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:untitled/Pantallas/principal.dart';
 import 'package:untitled/Pantallas/segunda.dart';
+import 'package:untitled/Pantallas/calculadora.dart';
 import 'main.dart';
 
 class Navegador extends StatefulWidget {
@@ -32,12 +33,27 @@ class Navegador extends StatefulWidget {
       super.initState();
       _pantallas.add(const MyHomePage(title: "Cambiar Imagen de Tamaño"));
       _pantallas.add(const Segunda(title: "Otra pantalla"));
+      _pantallas.add(const Calculadora(title: "Calculadora"));
       _cuerpo = _pantallas[_p];
 
     }
 
     void _cambiaPantalla(int v){
-      _p = v;
+      if (v == 0) {
+        if(_p <= 0){
+          _p = 0;
+        } else{
+          _p--;
+          print(_p);
+        }
+      } else if (v == 1) {
+        if(_p >= _pantallas.length -1){
+          _p = _pantallas.length -1;
+        } else{
+          _p ++;
+          print(_p);
+        }
+      }
       setState(() {
         _cuerpo = _pantallas[_p];
       });

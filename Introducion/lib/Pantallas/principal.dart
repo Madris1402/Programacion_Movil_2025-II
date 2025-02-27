@@ -15,19 +15,25 @@ class _MyHomePageState extends State<MyHomePage> {
   void _incrementCounter() {
     setState(() {
       _counter = _counter + 15;
+      if(_counter > 420){
+        _counter = 420;
+      }
     });
   }
 
   void _decreaseCounter() {
     setState(() {
       _counter = _counter - 15;
+      if(_counter < 0){
+        _counter = 0;
+      }
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.black,
+        //backgroundColor: Colors.black,
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           title: Text(widget.title),
