@@ -20,6 +20,8 @@ class _CalculadoraState extends State<Calculadora>{
   double _val1 = 0;
   double _val2 = 0;
   bool _saved = false;
+  double _padding = 12;
+  double _spacing = 5;
 
   // Colores Para los Botones
   Color _colorBotonSum = Colors.redAccent;
@@ -187,7 +189,7 @@ class _CalculadoraState extends State<Calculadora>{
                   Radius.circular(20)
               ),
             ),
-              padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 4.0),
+              padding: EdgeInsets.symmetric(horizontal: 25.0, vertical: 4.0),
               width: 350,
               child: Text(
                 "$_sres",
@@ -199,14 +201,14 @@ class _CalculadoraState extends State<Calculadora>{
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              spacing: 5,
+              spacing: _spacing,
               children: [
                 // AC, 7, 4, 1, 0
                 Column(
                   children: [
                     MaterialButton(
                       shape: StadiumBorder(side: BorderSide(width: 1)),
-                      padding: EdgeInsets.all(12),
+                      padding: EdgeInsets.all(_padding),
                       onPressed: (){
                         _borrar();
                       },
@@ -215,7 +217,7 @@ class _CalculadoraState extends State<Calculadora>{
                     ),
                     MaterialButton(
                       shape: StadiumBorder(side: BorderSide(width: 1)),
-                      padding: EdgeInsets.all(12),
+                      padding: EdgeInsets.all(_padding),
                       onPressed: (){
                         _cambiaNumero("7");
                       },
@@ -224,7 +226,7 @@ class _CalculadoraState extends State<Calculadora>{
                     ),
                     MaterialButton(
                       shape: StadiumBorder(side: BorderSide(width: 1)),
-                      padding: EdgeInsets.all(12),
+                      padding: EdgeInsets.all(_padding),
                       onPressed: (){
                         _cambiaNumero("4");
                       },
@@ -233,7 +235,7 @@ class _CalculadoraState extends State<Calculadora>{
                     ),
                     MaterialButton(
                       shape: StadiumBorder(side: BorderSide(width: 1)),
-                      padding: EdgeInsets.all(12),
+                      padding: EdgeInsets.all(_padding),
                       onPressed: (){
                         _cambiaNumero("1");
                       },
@@ -242,7 +244,7 @@ class _CalculadoraState extends State<Calculadora>{
                     ),
                     MaterialButton(
                       shape: StadiumBorder(side: BorderSide(width: 1)),
-                      padding: EdgeInsets.all(12),
+                      padding: EdgeInsets.all(_padding),
                       onPressed: (){
                         _cambiaNumero("0");
                       },
@@ -256,7 +258,7 @@ class _CalculadoraState extends State<Calculadora>{
                   children: [
                     MaterialButton(
                       shape: StadiumBorder(side: BorderSide(width: 1)),
-                      padding: EdgeInsets.all(12),
+                      padding: EdgeInsets.all(_padding),
                       onPressed: (){
                         if (_sres.contains(")") && _sres.contains("(")){
                           return;
@@ -271,7 +273,7 @@ class _CalculadoraState extends State<Calculadora>{
                     ),
                     MaterialButton(
                       shape: StadiumBorder(side: BorderSide(width: 1)),
-                      padding: EdgeInsets.all(12),
+                      padding: EdgeInsets.all(_padding),
                       onPressed: (){
                         _cambiaNumero("8");
                       },
@@ -280,7 +282,7 @@ class _CalculadoraState extends State<Calculadora>{
                     ),
                     MaterialButton(
                       shape: StadiumBorder(side: BorderSide(width: 1)),
-                      padding: EdgeInsets.all(12),
+                      padding: EdgeInsets.all(_padding),
                       onPressed: (){
                         _cambiaNumero("5");
                       },
@@ -289,7 +291,7 @@ class _CalculadoraState extends State<Calculadora>{
                     ),
                     MaterialButton(
                       shape: StadiumBorder(side: BorderSide(width: 1)),
-                      padding: EdgeInsets.all(12),
+                      padding: EdgeInsets.all(_padding),
                       onPressed: (){
                         _cambiaNumero("2");
                       },
@@ -298,7 +300,7 @@ class _CalculadoraState extends State<Calculadora>{
                     ),
                     MaterialButton(
                       shape: StadiumBorder(side: BorderSide(width: 1)),
-                      padding: EdgeInsets.all(12),
+                      padding: EdgeInsets.all(_padding),
                       onPressed: (){
                         if (_sres == ""){
                           _cambiaNumero("0");
@@ -319,7 +321,7 @@ class _CalculadoraState extends State<Calculadora>{
                   children: [
                     MaterialButton(
                       shape: StadiumBorder(side: BorderSide(width: 1)),
-                      padding: EdgeInsets.all(12),
+                      padding: EdgeInsets.all(_padding),
                       onPressed: (){
                         _porcentaje();
                       },
@@ -328,7 +330,7 @@ class _CalculadoraState extends State<Calculadora>{
                     ),
                     MaterialButton(
                       shape: StadiumBorder(side: BorderSide(width: 1)),
-                      padding: EdgeInsets.all(12),
+                      padding: EdgeInsets.all(_padding),
                       onPressed: (){
                         _cambiaNumero("9");
                       },
@@ -337,7 +339,7 @@ class _CalculadoraState extends State<Calculadora>{
                     ),
                     MaterialButton(
                       shape: StadiumBorder(side: BorderSide(width: 1)),
-                      padding: EdgeInsets.all(12),
+                      padding: EdgeInsets.all(_padding),
                       onPressed: (){
                         _cambiaNumero("6");
                       },
@@ -346,7 +348,7 @@ class _CalculadoraState extends State<Calculadora>{
                     ),
                     MaterialButton(
                       shape: StadiumBorder(side: BorderSide(width: 1)),
-                      padding: EdgeInsets.all(12),
+                      padding: EdgeInsets.all(_padding),
                       onPressed: (){
                         _cambiaNumero("3");
                       },
@@ -355,7 +357,7 @@ class _CalculadoraState extends State<Calculadora>{
                     ),
                     MaterialButton(
                       shape: StadiumBorder(side: BorderSide(width: 1)),
-                      padding: EdgeInsets.all(16),
+                      padding: EdgeInsets.all(_padding +4),
                       onPressed: (){
                         if (_sres.isEmpty){
                           return;
@@ -375,7 +377,7 @@ class _CalculadoraState extends State<Calculadora>{
                   children: [
                     MaterialButton(
                       shape: StadiumBorder(side: BorderSide(width: 1)),
-                      padding: EdgeInsets.all(12),
+                      padding: EdgeInsets.all(_padding),
                       onPressed: (){
                         if(_saved){
                           _div();
@@ -389,7 +391,7 @@ class _CalculadoraState extends State<Calculadora>{
                     ),
                     MaterialButton(
                       shape: StadiumBorder(side: BorderSide(width: 1)),
-                      padding: EdgeInsets.all(12),
+                      padding: EdgeInsets.all(_padding),
                       onPressed: (){
                         if(_saved){
                           _mult();
@@ -404,7 +406,7 @@ class _CalculadoraState extends State<Calculadora>{
                     MaterialButton(
 
                       shape: StadiumBorder(side: BorderSide(width: 1)),
-                      padding: EdgeInsets.all(12),
+                      padding: EdgeInsets.all(_padding),
                       onPressed: (){
                         if(_saved){
                           _resta();
@@ -418,7 +420,7 @@ class _CalculadoraState extends State<Calculadora>{
                     ),
                     MaterialButton(
                       shape: StadiumBorder(side: BorderSide(width: 1)),
-                      padding: EdgeInsets.all(12),
+                      padding: EdgeInsets.all(_padding),
                       onPressed: (){
                         if(_saved){
                           _suma();
@@ -432,7 +434,7 @@ class _CalculadoraState extends State<Calculadora>{
                     ),
                     MaterialButton(
                       shape: StadiumBorder(side: BorderSide(width: 1)),
-                      padding: EdgeInsets.all(12),
+                      padding: EdgeInsets.all(_padding),
                       onPressed: (){
                         _igualA();
                         setState(() {
@@ -453,4 +455,3 @@ class _CalculadoraState extends State<Calculadora>{
 
   }
 }
-
