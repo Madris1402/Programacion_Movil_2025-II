@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:untitled/Pantallas/ingreso.dart';
 import 'package:untitled/Pantallas/principal.dart';
-import 'package:untitled/Pantallas/segunda.dart';
+import 'package:untitled/Pantallas/bienvenida.dart';
 import 'package:untitled/Pantallas/calculadora.dart';
 import 'main.dart';
 
@@ -31,29 +32,16 @@ class Navegador extends StatefulWidget {
     @override
     void initState(){
       super.initState();
+      _pantallas.add(Ingreso(title: "Ingresar", bienvenida: _cambiaPantalla));
+      _pantallas.add(const Bienvenida(title: "Bienvenida"));
       _pantallas.add(const MyHomePage(title: "Cambiar Imagen de Tamaño"));
-      _pantallas.add(const Segunda(title: "Otra pantalla"));
       _pantallas.add(const Calculadora(title: "Calculadora"));
       _cuerpo = _pantallas[_p];
 
     }
 
     void _cambiaPantalla(int v){
-      if (v == 0) {
-        if(_p <= 0){
-          _p = 0;
-        } else{
-          _p--;
-          print(_p);
-        }
-      } else if (v == 1) {
-        if(_p >= _pantallas.length -1){
-          _p = _pantallas.length -1;
-        } else{
-          _p ++;
-          print(_p);
-        }
-      }
+      _p = v;
       setState(() {
         _cuerpo = _pantallas[_p];
       });
@@ -69,14 +57,23 @@ class Navegador extends StatefulWidget {
           onTap: (value){
             _cambiaPantalla(value);
           },
+          type: BottomNavigationBarType.fixed,
           items: <BottomNavigationBarItem>[
             BottomNavigationBarItem(
-              icon: Icon(Icons.arrow_back),
-              label: 'Atrás',
+              icon: Icon(Icons.home),
+              label: 'Principal',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.arrow_forward),
-              label: "Adelante",
+              icon: Icon(Icons.adb),
+              label: "Bienvenida",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.photo_size_select_large),
+              label: 'Cambiar Imagen de Tamaño',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.calculate),
+              label: "Calculadora",
             )
           ],
         ),

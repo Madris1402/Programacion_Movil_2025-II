@@ -84,7 +84,6 @@ class _MyHomePageState extends State<MyHomePage> {
                     shape: StadiumBorder(side: BorderSide(width: 1)),
                     onPressed: (){
                       _isShuffle = !_isShuffle;
-
                       _isShuffle ? _sustituirCaracter("a", "1"):_sustituirCaracter("1", "a");
                       _isShuffle ? _sustituirCaracter("b", "2"):_sustituirCaracter("2", "b");
                       _isShuffle ? _sustituirCaracter("c", "3"):_sustituirCaracter("3", "c");
