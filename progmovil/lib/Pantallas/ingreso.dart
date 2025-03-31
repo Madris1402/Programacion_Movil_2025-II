@@ -54,6 +54,9 @@ class _IngresoState extends State<Ingreso>{
                 ),
               ),
             ),
+            SizedBox(
+              height: 20,
+            ),
             MaterialButton(
               color: Colors.redAccent,
               onPressed: (){

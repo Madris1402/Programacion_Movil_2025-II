@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:progmovil/Pantallas/ingreso.dart';
 import 'package:progmovil/Pantallas/localizacion.dart';
-import 'package:progmovil/Pantallas/principal.dart';
+import 'package:progmovil/Pantallas/sizeableimage.dart';
 import 'package:progmovil/Pantallas/bienvenida.dart';
 import 'package:progmovil/Pantallas/calculadora.dart';
 

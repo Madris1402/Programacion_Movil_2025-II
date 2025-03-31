@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "835289476267",
+    "project_id": "progmovil-f50d1",
+    "storage_bucket": "progmovil-f50d1.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:835289476267:android:44e41fc1db7e9dd20edbee",
+        "android_client_info": {
+          "package_name": "com.fes.progmovil"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmSJtWKpoit7FB_H5I2JSeZYJVLsQlah0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
