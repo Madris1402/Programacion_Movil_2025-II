@@ -20,15 +20,15 @@ class _CalculadoraState extends State<Calculadora>{
   double _val1 = 0;
   double _val2 = 0;
   bool _saved = false;
-  double _padding = 12;
-  double _spacing = 5;
+  final double _padding = 12;
+  final double _spacing = 5;
 
   // Colores Para los Botones
   Color _colorBotonSum = Colors.redAccent;
   Color _colorBotonRes = Colors.redAccent;
   Color _colorBotonMult = Colors.redAccent;
   Color _colorBotonDiv = Colors.redAccent;
-  Color _colorBoton = Colors.redAccent;
+  final Color _colorBoton = Colors.redAccent;
 
   void _resetColors(){
     // Reiniciar Colores de los Botones
@@ -192,7 +192,7 @@ class _CalculadoraState extends State<Calculadora>{
               padding: EdgeInsets.symmetric(horizontal: 25.0, vertical: 4.0),
               width: 350,
               child: Text(
-                "$_sres",
+                _sres,
               style: TextStyle(
                 fontSize: 35,
               ),

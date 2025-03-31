@@ -4,7 +4,6 @@ import 'package:progmovil/Pantallas/localizacion.dart';
 import 'package:progmovil/Pantallas/principal.dart';
 import 'package:progmovil/Pantallas/bienvenida.dart';
 import 'package:progmovil/Pantallas/calculadora.dart';
-import 'main.dart';
 
 class Navegador extends StatefulWidget {
   const Navegador({super.key, required this.title});
@@ -19,7 +18,7 @@ class Navegador extends StatefulWidget {
   class _NavegadorState extends State<Navegador>{
 
   int _p = 0;
-  List<Widget> _pantallas = [];
+  final List<Widget> _pantallas = [];
 
   Widget _cuerpo = const Text(
       "Soy el cuerpo",

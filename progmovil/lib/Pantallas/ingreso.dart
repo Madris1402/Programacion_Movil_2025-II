@@ -14,7 +14,7 @@ class Ingreso extends StatefulWidget {
 
 class _IngresoState extends State<Ingreso>{
 
-  TextEditingController _controller = TextEditingController();
+  final TextEditingController _controller = TextEditingController();
 
   Future<SharedPreferences> _obtenerPreferencias() async{
     final SharedPreferences pref = await SharedPreferences.getInstance();

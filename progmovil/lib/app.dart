@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:progmovil/navegacion.dart';
-import 'navegacion.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
