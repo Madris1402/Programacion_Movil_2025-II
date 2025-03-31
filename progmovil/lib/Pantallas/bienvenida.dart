@@ -43,16 +43,21 @@ class _BienvenidaState extends State<Bienvenida>{
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
-              "Bienvenid@",
-              style: TextStyle(
-                fontSize: 40,
+            SizedBox(
+              width: 350,
+              child: Text(
+                "Te damos la bienvenida: ",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 30,
+                ),
               ),
             ),
             Text(
               _Nombre,
               style: TextStyle(
-                fontSize: 40,
+                fontSize: 20,
+                color: Colors.redAccent,
               ),
             )
           ],

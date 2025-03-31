@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:untitled/Pantallas/ingreso.dart';
-import 'package:untitled/Pantallas/principal.dart';
-import 'package:untitled/Pantallas/bienvenida.dart';
-import 'package:untitled/Pantallas/calculadora.dart';
+import 'package:progmovil/Pantallas/ingreso.dart';
+import 'package:progmovil/Pantallas/localizacion.dart';
+import 'package:progmovil/Pantallas/principal.dart';
+import 'package:progmovil/Pantallas/bienvenida.dart';
+import 'package:progmovil/Pantallas/calculadora.dart';
 import 'main.dart';
 
 class Navegador extends StatefulWidget {
@@ -36,6 +37,7 @@ class Navegador extends StatefulWidget {
       _pantallas.add(const Bienvenida(title: "Bienvenida"));
       _pantallas.add(const MyHomePage(title: "Cambiar Imagen de Tamaño"));
       _pantallas.add(const Calculadora(title: "Calculadora"));
+      _pantallas.add(const Localizacion(title: "Localización"));
       _cuerpo = _pantallas[_p];
 
     }
@@ -74,6 +76,10 @@ class Navegador extends StatefulWidget {
             BottomNavigationBarItem(
               icon: Icon(Icons.calculate),
               label: "Calculadora",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.location_pin),
+              label: "Localización",
             )
           ],
         ),
