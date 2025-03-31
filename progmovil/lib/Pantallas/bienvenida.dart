@@ -13,14 +13,14 @@ class Bienvenida extends StatefulWidget {
 
 class _BienvenidaState extends State<Bienvenida>{
 
-  String _Nombre = "";
+  String _nombre = "";
 
   void _leerDatos() async{
     final SharedPreferences pref = await SharedPreferences.getInstance();
     final String? aux = pref.getString("Nombre");
     if(aux != null){
      setState(() {
-       _Nombre = aux;
+       _nombre = aux;
      });
     }
   }
@@ -54,7 +54,7 @@ class _BienvenidaState extends State<Bienvenida>{
               ),
             ),
             Text(
-              _Nombre,
+              _nombre,
               style: TextStyle(
                 fontSize: 20,
                 color: Colors.redAccent,

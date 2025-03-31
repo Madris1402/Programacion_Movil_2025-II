@@ -83,7 +83,6 @@ class _LocalizacionState extends State<Localizacion>{
             MaterialButton(onPressed: (){
 
               _obtenerCoordenadas();
-              print("Aquí obtiene la localización");
             },
                 color: Colors.redAccent,
             child: Text(
