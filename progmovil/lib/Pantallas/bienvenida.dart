@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:progmovil/colors.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class Bienvenida extends StatefulWidget {
@@ -57,7 +57,7 @@ class _BienvenidaState extends State<Bienvenida>{
               _nombre,
               style: TextStyle(
                 fontSize: 20,
-                color: Colors.redAccent,
+                color: accent3,
               ),
             )
           ],

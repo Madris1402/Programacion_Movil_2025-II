@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:progmovil/colors.dart';
 import 'package:progmovil/navegacion.dart';
 
 class MyApp extends StatelessWidget {
@@ -9,6 +10,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Introdución',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         brightness: Brightness.dark,
         useMaterial3: true,

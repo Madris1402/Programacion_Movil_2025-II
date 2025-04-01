@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:progmovil/colors.dart';
 
 class Calculadora extends StatefulWidget {
   const Calculadora({super.key, required this.title});
@@ -24,18 +24,18 @@ class _CalculadoraState extends State<Calculadora>{
   final double _spacing = 5;
 
   // Colores Para los Botones
-  Color _colorBotonSum = Colors.redAccent;
-  Color _colorBotonRes = Colors.redAccent;
-  Color _colorBotonMult = Colors.redAccent;
-  Color _colorBotonDiv = Colors.redAccent;
-  final Color _colorBoton = Colors.redAccent;
+  Color _colorBotonSum = accent;
+  Color _colorBotonRes = accent;
+  Color _colorBotonMult = accent;
+  Color _colorBotonDiv = accent;
+  final Color _colorBoton = accent;
 
   void _resetColors(){
     // Reiniciar Colores de los Botones
-    _colorBotonSum = Colors.redAccent;
-    _colorBotonRes = Colors.redAccent;
-    _colorBotonMult = Colors.redAccent;
-    _colorBotonDiv = Colors.redAccent;
+    _colorBotonSum = accent;
+    _colorBotonRes = accent;
+    _colorBotonMult = accent;
+    _colorBotonDiv = accent;
   }
 
   void _cambiaNumero(String n){
@@ -87,44 +87,44 @@ class _CalculadoraState extends State<Calculadora>{
   void _suma(){
     _operador = 1;
     setState(() {
-      _colorBotonSum = Colors.deepOrangeAccent;
+      _colorBotonSum = secondary;
       //Resetear los demas botones a rojo
-      _colorBotonRes = Colors.redAccent;
-      _colorBotonMult = Colors.redAccent;
-      _colorBotonDiv = Colors.redAccent;
+      _colorBotonRes = accent;
+      _colorBotonMult = accent;
+      _colorBotonDiv = accent;
     });
   }
 
   void _resta(){
     _operador = 2;
     setState(() {
-      _colorBotonRes = Colors.deepOrangeAccent;
+      _colorBotonRes = secondary;
       //Resetear los demas botones a rojo
-      _colorBotonSum = Colors.redAccent;
-      _colorBotonMult = Colors.redAccent;
-      _colorBotonDiv = Colors.redAccent;
+      _colorBotonSum = accent;
+      _colorBotonMult = accent;
+      _colorBotonDiv = accent;
     });
   }
 
   void _mult(){
     _operador = 3;
     setState(() {
-      _colorBotonMult = Colors.deepOrangeAccent;
+      _colorBotonMult = secondary;
       //Resetear los demas botones a rojo
-      _colorBotonSum = Colors.redAccent;
-      _colorBotonRes = Colors.redAccent;
-      _colorBotonDiv = Colors.redAccent;
+      _colorBotonSum = accent;
+      _colorBotonRes = accent;
+      _colorBotonDiv = accent;
     });
   }
 
   void _div(){
     _operador = 4;
     setState(() {
-      _colorBotonDiv = Colors.deepOrangeAccent;
+      _colorBotonDiv = secondary;
       //Resetear los demas botones a rojo
-      _colorBotonSum = Colors.redAccent;
-      _colorBotonMult = Colors.redAccent;
-      _colorBotonRes = Colors.redAccent;
+      _colorBotonSum = accent;
+      _colorBotonMult = accent;
+      _colorBotonRes = accent;
     });
   }
 
@@ -183,8 +183,8 @@ class _CalculadoraState extends State<Calculadora>{
           children: [
             Container(
               decoration: BoxDecoration(
-                color: Colors.blueGrey,
-              border: Border.all(color: Colors.redAccent, width: 3),
+                color: accent2,
+              border: Border.all(color: accent, width: 3),
               borderRadius: BorderRadius.all(
                   Radius.circular(20)
               ),

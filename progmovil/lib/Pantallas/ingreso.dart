@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:progmovil/colors.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class Ingreso extends StatefulWidget {
@@ -49,16 +49,24 @@ class _IngresoState extends State<Ingreso>{
               width: 200,
               child: TextField(
                 controller: _controller,
+                cursorColor: accent,
                 decoration: InputDecoration(
                   hintText: 'Ingresa tu Nombre',
-                ),
+                    focusedBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(
+                        color: accent,
+                        width: 2.0,
+                      ),
+                    ),
+                  ),
               ),
             ),
             SizedBox(
               height: 20,
             ),
             MaterialButton(
-              color: Colors.redAccent,
+              shape: StadiumBorder(side: BorderSide(width: 1)),
+              color: accent,
               onPressed: (){
                 _escribirDatos();
                 widget.bienvenida(1);

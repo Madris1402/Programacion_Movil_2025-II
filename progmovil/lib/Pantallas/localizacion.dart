@@ -1,5 +1,6 @@
-import 'package:flutter/material.dart';
+import 'package:progmovil/colors.dart';
 import 'package:geolocator/geolocator.dart';
+
 
 class Localizacion extends StatefulWidget {
   const Localizacion({super.key, required this.title});
@@ -80,39 +81,46 @@ class _LocalizacionState extends State<Localizacion>{
                 fontSize: 40,
               ),
             ),
-            MaterialButton(onPressed: (){
-
-              _obtenerCoordenadas();
-            },
-                color: Colors.redAccent,
-            child: Text(
+            MaterialButton(
+              shape: StadiumBorder(side: BorderSide(width: 1)),
+              onPressed: (){
+                _obtenerCoordenadas();
+              },
+              color: accent,
+              child: Text(
                 "Obtener Localización"
               )
             ),
             SizedBox(
               height: 50,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Text(
-                      "Latitud: $_lat",
-                      style: TextStyle(
-                        fontSize: 20,
-                      )
-                  ),
-                ]
+            SizedBox(
+              width: 250,
+              child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Text(
+                        "Latitud: $_lat",
+                        style: TextStyle(
+                          fontSize: 20,
+                        )
+                    ),
+                  ]
+              ),
             ),
-            Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Text(
-                      "Longitud: $_long",
-                      style: TextStyle(
-                        fontSize: 20,
-                      )
-                  ),
-                ]
+            SizedBox(
+              width: 250,
+              child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Text(
+                        "Longitud: $_long",
+                        style: TextStyle(
+                          fontSize: 20,
+                        )
+                    ),
+                  ]
+              ),
             )
           ],
         ),

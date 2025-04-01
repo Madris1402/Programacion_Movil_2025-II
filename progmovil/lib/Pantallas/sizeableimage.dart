@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:progmovil/colors.dart';
 import 'dart:math';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
@@ -118,7 +118,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     _texto,
                     style: TextStyle(
                         fontSize: 12,
-                        color: Colors.orangeAccent
+                        color: accent3
                     ),
                   ),
                 ),
@@ -136,24 +136,8 @@ class _MyHomePageState extends State<MyHomePage> {
                       _isShuffle ? _sustituirCaracter("h", "8"):_sustituirCaracter("8", "h");
                       _isShuffle ? _sustituirCaracter("i", "9"):_sustituirCaracter("9", "i");
                       _isShuffle ? _sustituirCaracter("j", "0"):_sustituirCaracter("0", "j");
-                      _isShuffle ? _sustituirCaracter("k", "!"):_sustituirCaracter("!", "k");
-                      _isShuffle ? _sustituirCaracter("l", "@"):_sustituirCaracter("@", "l");
-                      _isShuffle ? _sustituirCaracter("m", "#"):_sustituirCaracter("#", "m");
-                      _isShuffle ? _sustituirCaracter("n", "\$"):_sustituirCaracter("\$", "n");
-                      _isShuffle ? _sustituirCaracter("o", "%"):_sustituirCaracter("%", "o");
-                      _isShuffle ? _sustituirCaracter("p", "^"):_sustituirCaracter("^", "p");
-                      _isShuffle ? _sustituirCaracter("q", "&"):_sustituirCaracter("&", "q");
-                      _isShuffle ? _sustituirCaracter("r", "*"):_sustituirCaracter("*", "r");
-                      _isShuffle ? _sustituirCaracter("s", "("):_sustituirCaracter("(", "s");
-                      _isShuffle ? _sustituirCaracter("t", ")"):_sustituirCaracter(")", "t");
-                      _isShuffle ? _sustituirCaracter("u", "-"):_sustituirCaracter("-", "u");
-                      _isShuffle ? _sustituirCaracter("v", "_"):_sustituirCaracter("_", "v");
-                      _isShuffle ? _sustituirCaracter("w", "+"):_sustituirCaracter("+", "w");
-                      _isShuffle ? _sustituirCaracter("x", "="):_sustituirCaracter("=", "x");
-                      _isShuffle ? _sustituirCaracter("y", "["):_sustituirCaracter("[", "y");
-                      _isShuffle ? _sustituirCaracter("z", "]"):_sustituirCaracter("]", "z");
                     },
-                    color: Colors.redAccent,
+                    color: accent,
                     child: Icon(Icons.shuffle, size: 15,)
                 ),
                 Row(
@@ -163,13 +147,13 @@ class _MyHomePageState extends State<MyHomePage> {
                     MaterialButton(
                         shape: StadiumBorder(side: BorderSide(width: 1)),
                         onPressed: _increaseRandom,
-                        color: Colors.redAccent,
+                        color: accent,
                         child: Icon(Icons.plus_one, size: 15,)
                     ),
                     MaterialButton(
                         shape: StadiumBorder(side: BorderSide(width: 1)),
                         onPressed: _decreaseRandom,
-                        color: Colors.redAccent,
+                        color: accent,
                         child: Icon(Icons.exposure_minus_1, size: 15,)
                     )
                   ],
@@ -217,7 +201,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       _escribirBaseDatos();
                     },
                     tooltip: 'Increment',
-                    backgroundColor: Colors.redAccent,
+                    backgroundColor: accent,
                     child: const Icon(Icons.unfold_more)
                     ),
                     SizedBox(
@@ -230,7 +214,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         },
                           tooltip: 'Decrease',
                           backgroundColor:
-                          Colors.redAccent,
+                          accent,
                         child: const Icon(Icons.unfold_less_rounded)
                     )
                   ]
