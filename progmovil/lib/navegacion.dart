@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:progmovil/Pantallas/calendario.dart';
 import 'package:progmovil/Pantallas/ingreso.dart';
 import 'package:progmovil/Pantallas/localizacion.dart';
 import 'package:progmovil/Pantallas/sizeableimage.dart';
 import 'package:progmovil/Pantallas/bienvenida.dart';
 import 'package:progmovil/Pantallas/calculadora.dart';
+
+import 'colors.dart';
 
 class Navegador extends StatefulWidget {
   const Navegador({super.key, required this.title});
@@ -32,11 +35,12 @@ class Navegador extends StatefulWidget {
     @override
     void initState(){
       super.initState();
-      _pantallas.add(Ingreso(title: "Ingresar", bienvenida: _cambiaPantalla));
+      _pantallas.add(Ingreso(title: "Programación Móvil", bienvenida: _cambiaPantalla));
       _pantallas.add(const Bienvenida(title: "Bienvenida"));
       _pantallas.add(const MyHomePage(title: "Cambiar Imagen de Tamaño"));
       _pantallas.add(const Calculadora(title: "Calculadora"));
       _pantallas.add(const Localizacion(title: "Localización"));
+      _pantallas.add(const Calendario(title: "Calendario"));
       _cuerpo = _pantallas[_p];
 
     }
@@ -58,14 +62,17 @@ class Navegador extends StatefulWidget {
           onTap: (value){
             _cambiaPantalla(value);
           },
+          currentIndex: _p,
           type: BottomNavigationBarType.fixed,
+          selectedItemColor: accent,
+          unselectedItemColor: Colors.white38,
           items: <BottomNavigationBarItem>[
             BottomNavigationBarItem(
               icon: Icon(Icons.home),
               label: 'Principal',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.adb),
+              icon: Icon(Icons.person),
               label: "Bienvenida",
             ),
             BottomNavigationBarItem(
@@ -79,6 +86,10 @@ class Navegador extends StatefulWidget {
             BottomNavigationBarItem(
               icon: Icon(Icons.location_pin),
               label: "Localización",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.calendar_month),
+              label: "Calendario",
             )
           ],
         ),
