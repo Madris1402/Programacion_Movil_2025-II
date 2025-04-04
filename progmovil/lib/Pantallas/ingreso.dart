@@ -65,7 +65,7 @@ class _IngresoState extends State<Ingreso>{
               height: 20,
             ),
             MaterialButton(
-              shape: StadiumBorder(side: BorderSide(width: 1)),
+              shape: StadiumBorder(),
               color: accent,
               onPressed: (){
                 _escribirDatos();

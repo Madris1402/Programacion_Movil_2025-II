@@ -13,6 +13,16 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         brightness: Brightness.dark,
+        datePickerTheme: DatePickerThemeData(
+          surfaceTintColor: accent,
+          todayBackgroundColor: MaterialStateProperty.all(accent),
+          confirmButtonStyle: ButtonStyle(
+            foregroundColor: MaterialStateProperty.all(accent),
+          ),
+          cancelButtonStyle: ButtonStyle(
+            foregroundColor: MaterialStateProperty.all(accent),
+          )
+        ),
         useMaterial3: true,
       ),
       home: const Navegador(title: "Navegador",),

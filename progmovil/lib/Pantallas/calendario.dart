@@ -25,8 +25,10 @@ class _CalendarioState extends State<Calendario>{
     try {QuerySnapshot eventos = await db.collection("eventos").get();
       if (eventos.docs.isNotEmpty) {
         for (DocumentSnapshot evento in eventos.docs) {
-          _nombresEventos.add(evento.id);
-          _eventos.add(evento.data() as Map<String, dynamic>);
+          setState(() {
+            _nombresEventos.add(evento.id);
+            _eventos.add(evento.data() as Map<String, dynamic>);
+          });
         }
         print("Nombre del Evento: $_nombresEventos");
         print("Evento: $_eventos");
@@ -77,14 +79,21 @@ class _CalendarioState extends State<Calendario>{
           ),
         ),
       ),
+
       floatingActionButton: FloatingActionButton(
-        onPressed: (){},
+        onPressed: (){
+          showDialog(
+              context: context,
+              builder: (context) => _guardarEvento());
+        },
+        tooltip: 'Agendar Evento',
         backgroundColor: accent,
         child: Icon(Icons.add),
       ),
     );
 
   }
+
   List<Meeting> _getDataSource(List <String> nombresEventos, List <Map<String, dynamic>> eventos ) {
     final List<Meeting> meetings = <Meeting>[];
 
@@ -96,6 +105,97 @@ class _CalendarioState extends State<Calendario>{
           fechaFinal, Color(eventos[i]["color"] as int), eventos[i]['todoDia']));
     }
     return meetings;
+  }
+}
+
+class _guardarEvento extends StatelessWidget{
+  final TextEditingController _textEditingController = TextEditingController();
+  _guardarEvento({super.key});
+
+  void _agendarEvento(String nombreEvento) {
+    print("Nombre del Evento: $nombreEvento");
+    _textEditingController.text = "";
+  }
+
+  void _guardarFecha(BuildContext context) async{
+    DateTime? _fechaSeleccionada = await showDatePicker(
+      cancelText: "Cancelar",
+      confirmText: "Aceptar",
+      helpText: "Selecciona una fecha",
+      context: context,
+      initialDate: DateTime.now(),
+      firstDate: DateTime(2000),
+      lastDate: DateTime(2100)
+    );
+
+    if(_fechaSeleccionada != null){
+      print("Fecha Seleccionada: ${_fechaSeleccionada.toLocal()}");
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Dialog(
+        child: Container(
+          decoration: BoxDecoration(
+            color: Colors.black26,
+            borderRadius: BorderRadius.circular(20),
+          ),
+          height: 600,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text("Evento", style: TextStyle(fontSize: 30),
+              ),
+              SizedBox(
+                width: 200,
+                child: TextField(
+                  controller: _textEditingController,
+                  cursorColor: accent,
+                  decoration: InputDecoration(
+                    hintText: 'Nombre del Evento',
+                    focusedBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(
+                        color: accent,
+                        width: 2.0,
+                      ),
+                    ),
+                  )
+                ),
+              ),
+              SizedBox(
+                width: 200,
+                child: TextField(
+                  readOnly: true,
+                  decoration: InputDecoration(
+                    hintText: 'Fecha Inicial',
+                    focusedBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(
+                        color: accent,
+                        width: 2.0,
+                  ),
+                    ),
+                  ),
+                  onTap: (){
+                    _guardarFecha(context);
+                  },
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              MaterialButton(
+                shape: StadiumBorder(),
+                color: accent,
+                onPressed: (){
+                  _agendarEvento(_textEditingController.text);
+                },
+                child: Text("Guardar Evento"),
+              ),
+            ]
+          )
+        )
+    );
   }
 }
 
