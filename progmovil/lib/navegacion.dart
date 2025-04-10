@@ -6,6 +6,7 @@ import 'package:progmovil/Pantallas/sizeableimage.dart';
 import 'package:progmovil/Pantallas/bienvenida.dart';
 import 'package:progmovil/Pantallas/calculadora.dart';
 
+import 'Pantallas/personal.dart';
 import 'colors.dart';
 
 class Navegador extends StatefulWidget {
@@ -41,6 +42,7 @@ class Navegador extends StatefulWidget {
       _pantallas.add(const Calculadora(title: "Calculadora"));
       _pantallas.add(const Localizacion(title: "Localización"));
       _pantallas.add(const Calendario(title: "Calendario"));
+      _pantallas.add(const Personal(title: "Tarjetas"));
       _cuerpo = _pantallas[_p];
 
     }
@@ -90,6 +92,10 @@ class Navegador extends StatefulWidget {
             BottomNavigationBarItem(
               icon: Icon(Icons.calendar_month),
               label: "Calendario",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.person_add_alt_1_rounded),
+              label: "Personal",
             )
           ],
         ),

@@ -15,7 +15,11 @@ class MyApp extends StatelessWidget {
         brightness: Brightness.dark,
         datePickerTheme: DatePickerThemeData(
           surfaceTintColor: accent,
+          backgroundColor: backgroundColor,
+
           todayBackgroundColor: MaterialStateProperty.all(accent),
+          todayForegroundColor: MaterialStateProperty.all(Colors.white),
+
           confirmButtonStyle: ButtonStyle(
             foregroundColor: MaterialStateProperty.all(accent),
           ),
