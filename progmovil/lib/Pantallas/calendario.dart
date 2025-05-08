@@ -113,14 +113,15 @@ class _CalendarioState extends State<Calendario>{
 
 
 
-class _guardarEvento extends StatefulWidget { // Change to StatefulWidget
-  const _guardarEvento({super.key}); // Constructor is now const
+class _guardarEvento extends StatefulWidget {
+  const _guardarEvento({super.key});
 
   @override
   State<_guardarEvento> createState() => _guardarEventoState();
 }
 
-class _guardarEventoState extends State<_guardarEvento> {  // Create a State class
+class _guardarEventoState extends State<_guardarEvento> {
+  FirebaseFirestore db = FirebaseFirestore.instance;
   DateTime? _fechaSeleccionada;
   DateTime? _fechaInicial;
   DateTime? _fechaFinal;
@@ -139,13 +140,18 @@ class _guardarEventoState extends State<_guardarEvento> {  // Create a State cla
     super.dispose();
   }
 
-  void _agendarEvento(String nombreEvento) {
+  void _agendarEvento(String nombreEvento) async {
     print("Nombre del Evento: $nombreEvento \n "
         "Fecha Inicial: $_fechaInicial \n "
         "Fecha Final: $_fechaFinal \n"
         "Color: $_hexColor \n"
         "Todo el día: $todoDia");
-
+    try {
+      await db.collection("eventos").doc(nombreEvento).set({"color": int.parse(_hexColor, radix: 16), "fechaFinal": _fechaFinal, "fechaInicial": _fechaInicial, "todoDia": todoDia});
+      print("Se ha escrito $nombreEvento en la base de datos");
+    } catch (e) {
+      print("Error al escribir la base de datos: $e");
+    }
     _textEditingController.clear();
     Navigator.of(context).pop();
   }
